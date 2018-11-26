@@ -34,22 +34,22 @@ export default {
     console.log('beforeCreate')
   },
   // 当进入组件之前，执行beforeRouteEnter路由钩子函数
-  beforeRouteEnter (to,from,next){
+  beforeRouteEnter (to, from, next) {
     console.log('beforeRouteEnter')
-    console.log('this',this)
+    console.log('this', this)
     // 结果为undefined，因为在执行beforeRouteEnter时候，组件还没有被创建出来，先执行beforeRouteEnter，再执行beforeCreate
-    next((vm)=>{
+    next((vm) => {
       vm.test = '我改变了'
-      console.log('vm.test',vm.test)
+      console.log('vm.test', vm.test)
     })
   },
-  beforeRouteUpdate (to,from,next) {
+  beforeRouteUpdate (to, from, next) {
     console.log('beforeRouteUpdate')
     next()
   },
-  beforeRouteLeave(to,from,next) {
+  beforeRouteLeave (to, from, next) {
     // 离开组件的时候触发
-    //什么都不写的时候，不会离开（走下一步）
+    // 什么都不写的时候，不会离开（走下一步）
     next()
   },
   // watch: {

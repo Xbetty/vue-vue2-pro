@@ -13,6 +13,7 @@ import Baz from '@/components/Baz'
 import User from '@/components/user'
 import Study from '@/components/study'
 import Hobby from '@/components/hobby'
+import TestElementUI from '@/components/testElementUI'
 // 要告诉vue使用vueRouter
 Vue.use(Router)
 
@@ -82,6 +83,11 @@ export default new Router({
           component: Hobby
         }
       ]
+    },
+    {
+      path: '/testElementUI',
+      name: 'testElementUI',
+      component: TestElementUI
     }
   ]
 })
