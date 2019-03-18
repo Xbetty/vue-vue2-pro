@@ -11,7 +11,8 @@
             <a>Hobby</a>
           </router-link>
         </ul>
-        测试数据：{{test}}
+        测试数据路由导航守卫：{{test}}
+
         <router-view/>
     </div>
 </template>
@@ -33,6 +34,7 @@ export default {
     // 组件生命周期函数
     console.log('beforeCreate')
   },
+  // ----------------------------------------------------路由导航守卫------------------------------------------------------
   // 当进入组件之前，执行beforeRouteEnter路由钩子函数
   beforeRouteEnter (to, from, next) {
     console.log('beforeRouteEnter')
@@ -45,13 +47,16 @@ export default {
   },
   beforeRouteUpdate (to, from, next) {
     console.log('beforeRouteUpdate')
+    this.dynamicSegment = to.params.id
     next()
   },
   beforeRouteLeave (to, from, next) {
     // 离开组件的时候触发
+    console.log('beforeRouteLeave')
     // 什么都不写的时候，不会离开（走下一步）
     next()
   },
+  // ------------------------------------------------------------------------------------------------------------
   // watch: {
   //   $route (to, from) {
   //     // to表示的是你要去的那个组件，from表示的是你从哪个组件过来的，他们是两个对象，你可以把它打印出来，它们也有一个param属性
@@ -62,7 +67,7 @@ export default {
   //   }
   // },
   mounted () {
-    console.log('id22222', this.$route.params)
+    console.log('id:', this.$route.params)
     this.dynamicSegment = this.$route.params.id
   }
 }

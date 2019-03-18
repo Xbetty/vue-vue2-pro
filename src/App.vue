@@ -10,6 +10,7 @@
       <router-link to="/user/123">User123</router-link>
       <router-link to="/user/456">User456</router-link>
       <router-link to="/testElementUI">testElementUI</router-link>
+      <router-link to="/eleIndex">ElementUI</router-link>
     </div>
     <!-- 对应的组件内容渲染到router-view中 -->
     <router-view/>

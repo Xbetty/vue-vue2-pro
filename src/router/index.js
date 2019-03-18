@@ -2,6 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 // 引入组件
 import HelloWorld from '@/components/HelloWorld'
+import ElementUI from '@/components/ElementUI/index.vue'
+import Upload from '@/components/ElementUI/upload.vue'
+import OpenAndCloseTextOne from '@/components/ElementUI/openAndCloseTextOne.vue'
+import OpenAndCloseTextTwo from '@/components/ElementUI/openAndCloseTextTwo.vue'
+import EleInput from '@/components/ElementUI/input'
+import EleSelect from '@/components/ElementUI/select'
 import Home from '@/components/home'
 import phone from '@/components/phone'
 import tablet from '@/components/tablet'
@@ -14,6 +20,8 @@ import User from '@/components/user'
 import Study from '@/components/study'
 import Hobby from '@/components/hobby'
 import TestElementUI from '@/components/testElementUI'
+import MenuManage from '@/components/MenuManage'
+import PeopleManage from '@/components/PeopleManage'
 // 要告诉vue使用vueRouter
 Vue.use(Router)
 
@@ -28,6 +36,38 @@ export default new Router({
       path: '/hello',
       name: 'HelloWorld',
       component: HelloWorld
+    },
+    {
+      path: '/eleIndex',
+      name: 'ElementUI',
+      component: ElementUI,
+      children: [
+        {
+          path: 'input',
+          name: 'EleInput',
+          component: EleInput
+        },
+        {
+          path: 'select',
+          name: 'EleSelect',
+          component: EleSelect
+        },
+        {
+          path: 'upload',
+          name: 'Upload',
+          component: Upload
+        },
+        {
+          path: 'openAndCloseTextOne',
+          name: 'openAndCloseTextOne',
+          component: OpenAndCloseTextOne
+        },
+        {
+          path: 'openAndCloseTextTwo',
+          name: 'openAndCloseTextTwo',
+          component: OpenAndCloseTextTwo
+        }
+      ]
     },
     {
       path: '/home',
@@ -87,7 +127,17 @@ export default new Router({
     {
       path: '/testElementUI',
       name: 'testElementUI',
-      component: TestElementUI
+      component: TestElementUI,
+      children: [{
+        path: '/MenuManage',
+        name: 'manuManage',
+        component: MenuManage
+      },
+      {
+        path: '/PeopleManage',
+        name: 'peopleManage',
+        component: PeopleManage
+      }]
     }
   ]
 })
