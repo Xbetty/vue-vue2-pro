@@ -2,12 +2,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 // 引入组件
 import HelloWorld from '@/components/HelloWorld'
-import ElementUI from '@/components/ElementUI/index.vue'
-import Upload from '@/components/ElementUI/upload.vue'
-import OpenAndCloseTextOne from '@/components/ElementUI/openAndCloseTextOne.vue'
-import OpenAndCloseTextTwo from '@/components/ElementUI/openAndCloseTextTwo.vue'
-import EleInput from '@/components/ElementUI/input'
-import EleSelect from '@/components/ElementUI/select'
+import Plugins from '@/components/Plugins/index.vue'
+import Upload from '@/components/Plugins/upload.vue'
+import OpenAndCloseTextOne from '@/components/Plugins/openAndCloseTextOne.vue'
+import OpenAndCloseTextTwo from '@/components/Plugins/openAndCloseTextTwo.vue'
+import Html2CanvasCom from '@/components/Plugins/html2canvas.vue'
+import EleInput from '@/components/Plugins/input'
+import EleSelect from '@/components/Plugins/select'
 import Home from '@/components/home'
 import phone from '@/components/phone'
 import tablet from '@/components/tablet'
@@ -36,38 +37,6 @@ export default new Router({
       path: '/hello',
       name: 'HelloWorld',
       component: HelloWorld
-    },
-    {
-      path: '/eleIndex',
-      name: 'ElementUI',
-      component: ElementUI,
-      children: [
-        {
-          path: 'input',
-          name: 'EleInput',
-          component: EleInput
-        },
-        {
-          path: 'select',
-          name: 'EleSelect',
-          component: EleSelect
-        },
-        {
-          path: 'upload',
-          name: 'Upload',
-          component: Upload
-        },
-        {
-          path: 'openAndCloseTextOne',
-          name: 'openAndCloseTextOne',
-          component: OpenAndCloseTextOne
-        },
-        {
-          path: 'openAndCloseTextTwo',
-          name: 'openAndCloseTextTwo',
-          component: OpenAndCloseTextTwo
-        }
-      ]
     },
     {
       path: '/home',
@@ -138,6 +107,43 @@ export default new Router({
         name: 'peopleManage',
         component: PeopleManage
       }]
+    },
+    {
+      path: '/plugins',
+      name: 'Plugins',
+      component: Plugins,
+      children: [
+        {
+          path: 'input',
+          name: 'EleInput',
+          component: EleInput
+        },
+        {
+          path: 'select',
+          name: 'EleSelect',
+          component: EleSelect
+        },
+        {
+          path: 'upload',
+          name: 'Upload',
+          component: Upload
+        },
+        {
+          path: 'openAndCloseTextOne',
+          name: 'openAndCloseTextOne',
+          component: OpenAndCloseTextOne
+        },
+        {
+          path: 'openAndCloseTextTwo',
+          name: 'openAndCloseTextTwo',
+          component: OpenAndCloseTextTwo
+        },
+        {
+          path: 'html2canvas',
+          name: 'html2canvas',
+          component: Html2CanvasCom
+        }
+      ]
     }
   ]
 })

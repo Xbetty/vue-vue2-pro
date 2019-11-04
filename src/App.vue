@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2019-07-04 10:40:08
+ * @LastEditTime: 2019-11-04 10:13:54
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \vue2-pro\src\App.vue
+ -->
 <template>
   <div id="app">
     <img src="./assets/logo.png">
@@ -10,7 +18,7 @@
       <router-link to="/user/123">User123</router-link>
       <router-link to="/user/456">User456</router-link>
       <router-link to="/testElementUI">testElementUI</router-link>
-      <router-link to="/eleIndex">ElementUI</router-link>
+      <router-link to="/plugins">Plugins</router-link>
     </div>
     <!-- 对应的组件内容渲染到router-view中 -->
     <router-view/>
